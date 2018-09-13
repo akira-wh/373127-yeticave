@@ -1,8 +1,12 @@
 <?php
-$is_auth = (boolean) rand(0, 1);
+  // Пользователь залогинен? Рандомный ответ TRUE или FALSE.
+  $isUserLoggedIn = (boolean) rand(0, 1);
 
-$user_name = 'Константин';
-$user_avatar = 'img/user.jpg';
+  // Данные пользователя (для поля авторизации на сайте).
+  $userData = [
+    'name' => 'Константин',
+    'avatarURL' => 'img/user.jpg'
+  ];
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +31,29 @@ $user_avatar = 'img/user.jpg';
           <input class="main-header__search-btn" type="submit" name="find" value="Найти">
         </form>
         <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
-        <nav class="user-menu"></nav>
+
+        <nav class="user-menu">
+          <?php if ($isUserLoggedIn): ?>
+            <div class="user-menu__image">
+              <img src="<?php print($userData['avatarURL']); ?>"
+                    width="40"
+                    height="40"
+                    alt="Пользователь">
+            </div>
+            <div class="user-menu__logged">
+              <p><?php print($userData['name']); ?></p>
+            </div>
+          <?php else: ?>
+            <ul class="user-menu__list">
+              <li class="user-menu__item">
+                <a href="#">Регистрация</a>
+              </li>
+              <li class="user-menu__item">
+                <a href="#">Вход</a>
+              </li>
+            </ul>
+          <?php endif; ?>
+        </nav>
       </div>
     </header>
 
