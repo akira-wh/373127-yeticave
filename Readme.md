@@ -1,7 +1,7 @@
 # Личный проект «YetiCave»
 
 * Студент: [Иса Стамкулов](https://up.htmlacademy.ru/php/6/user/373127).
-* Наставник: `Неизвестно`.
+* Наставник: [Антон Попов](https://htmlacademy.ru/profile/joker).
 
 ---
 
